@@ -26,8 +26,7 @@ def create_app():
     def index():
         goals = mongo.db.Goals.find({
             'user': session.get('user'),
-            'hash': session.get('hash')
-        })
+            'hash': session.get('hash')})
 
         short_term = []
         long_term = []
@@ -74,8 +73,7 @@ def create_app():
             'term': request.form['term'],
             'complete': False,
             'user': session.get('user'),
-            'hash': session.get('hash')
-        })
+            'hash': session.get('hash')})
         return redirect(url_for('index'))
 
     @app.route('/delete/<ObjectId:Goal>')
@@ -93,7 +91,6 @@ def create_app():
             'user': session.get('user'),
             'hash': session.get('hash')},
             {'$set': {'complete': True}})
-
         return redirect(url_for('index'))
 
     @app.route('/incomplete/<ObjectId:Goal>')
@@ -103,9 +100,7 @@ def create_app():
             'user': session.get('user'),
             'hash': session.get('hash')},
             {'$set': {'complete': False}})
-
         return redirect(url_for('index'))
-
     return app
 
 
