@@ -1,0 +1,36 @@
+<form action="{{add_url}}" method="post">
+        <div class="form-group">
+          <div class="row">
+            <div class="column">
+              <label for="contentText">
+                Goal:
+              </label>
+              <input type="text" class="form-control" id="contentText" name="content" aria-describedby="contentHelp" placeholder="write here your goal..." style="width: 500px;">
+            </div>
+            &emsp;
+            <div class="column">
+              <label for="deadlineText">
+                Deadline Date:
+              </label>
+              <input type="date" class="form-control" id="deadlineText" name="deadline" aria-describedby="deadlineHelp" style="width: 160px;">
+            </div>
+            &emsp;
+            <div class="column">
+              <label for="termText">
+              Term:
+              </label>
+              <div class="form-group">
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="shortTerm" name="term" class="custom-control-input" checked="" value="short">
+                  <label class="custom-control-label" for="shortTerm">Short term goal</label>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input type="radio" id="longTerm" name="term" class="custom-control-input" value="long">
+                  <label class="custom-control-label" for="longTerm">Long term goal</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+</form>

@@ -1,0 +1,18 @@
+<ul class="list-group list-group-flush">
+    {% for item in s_items|sort(attribute = 'date') %}
+        <li class="list-group-item list-group-item-action">
+          {% if item.complete == True %}
+            <strike>Deadline: {{item.date}}<br/>
+            {{item.content}}</strike>
+          {% else %}
+            Deadline: {{item.date}}<br/>
+            {{item.content}}
+          {% endif %}
+            <span class="float-right">
+                <a href="{{item.comp_url}}" class="text-primary"><i class="fas fa-check" style="color:MediumSeaGreen;"></i></a>
+                <a href="{{item.incomp_url}}" class="text-primary"><i class="fas fa-times" style="color:Tomato;"></i></a>
+                <a href="{{item.del_url}}" class="text-primary"><i class="fas fa-trash"></i></a>
+            </span>
+        </li>
+    {% endfor %}
+</ul>

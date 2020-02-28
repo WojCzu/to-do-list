@@ -1,0 +1,21 @@
+{% if username %}
+    <span class="navbar-text text-active">
+        Hello, {{username}}
+        <a href="{{logout_url}}" class="ml-2">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+    </span>
+{% else %}
+    <form class="form-inline justify-content-end"
+        action="{{login_url}}" method="post">
+        <input class="form-control mr-2 col-3" 
+            type="text" placeholder="login" 
+            name="username"
+            aria-label="username">
+        <input class="form-control mr-2 col-3" 
+            type="password" placeholder="password" 
+            name="password"
+            aria-label="password">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log in</button>
+    </form>
+{% endif %}
